@@ -1,0 +1,42 @@
+{
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    // same as the --compilerOptions flag and the TS_NODE_COMPILER_OPTIONS environment variable
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es2020",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true
+    }
+  },
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext", "es2020", "es5", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "downlevelIteration": true,
+    "baseUrl": "src",
+    "paths": {
+      "store": ["src/store"],
+      "@slices/*": ["store/slices/*"],
+      "@styled": ["components/styled/"],
+      "__test-utils__/*": ["src/__test-utils__/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*", "src/setup-tests.js"],
+  "types": ["node", "jest", "@testing-library/jest-dom"]
+}

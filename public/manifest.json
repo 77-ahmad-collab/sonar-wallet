@@ -1,0 +1,51 @@
+{
+  "name": "SonarWallet",
+  "description": "An extension based crypto wallet for Ethereum and other non evm blockchains",
+  "version": "0.0.11",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+
+    "clipboardRead",
+
+    "unlimitedStorage",
+    "clipboardWrite",
+    "alarms",
+    "storage",
+    "activeTab",
+    "notifications"
+  ],
+  "action": {
+    "default_title": "SonarWallet",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js", "*.json"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_page": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{5f568f4f-6781-4a94-83cd-7e2a7cf1bf70}"
+    }
+  },
+  "icons": {
+    "16": "16.ico",
+    "48": "48.ico"
+  },
+  "minimum_chrome_version": "88"
+}

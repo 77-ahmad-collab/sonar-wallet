@@ -1,0 +1,21 @@
+node_modules
+package-lock.json
+dist/
+.npmrc
+.env
+yarn.lock
+yarn-error.log
+.env
+*.zip
+.scannerwork
+.firebase
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
+coverage
